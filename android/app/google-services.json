@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "558287911723",
+    "project_id": "quirk-408521",
+    "storage_bucket": "quirk-408521.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558287911723:android:c33bc691be1be9bfdc636e",
+        "android_client_info": {
+          "package_name": "com.example.quirk_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXycPYhAsZ5iu3f11Iqn7Lrls7TJcB640"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
