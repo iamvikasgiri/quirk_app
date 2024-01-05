@@ -19,11 +19,6 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Profile"),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        elevation: 0,
-      ),
       backgroundColor: Theme.of(context).colorScheme.background,
       body: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
         future: getUserDetails(),
@@ -47,9 +42,25 @@ class ProfilePage extends StatelessWidget {
 
             return Center(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(user!['email']),
-                  Text(user['username']),
+                  // profile picture
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.primary,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    padding: const EdgeInsets.all(25),
+                    child: const Icon(
+                      Icons.person,
+                      size: 64,
+                    ),
+                  ),
+                  //username
+                  Text(user!['username']),
+
+                  //email
+                  Text(user['email']),
                 ],
               ),
             );
