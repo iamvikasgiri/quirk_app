@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:quirk_app/components/my_back_button.dart';
 
 class ProfilePage extends StatelessWidget {
   ProfilePage({super.key});
@@ -42,13 +43,26 @@ class ProfilePage extends StatelessWidget {
 
             return Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  // back button
+                  const Padding(
+                    padding: EdgeInsets.only(
+                      top: 50.0,
+                      left: 25,
+                    ),
+                    child: Row(
+                      children: [
+                        MyBackButton(),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 24),
+
                   // profile picture
                   Container(
                     decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.primary,
-                      borderRadius: BorderRadius.circular(40),
+                      borderRadius: BorderRadius.circular(24),
                     ),
                     padding: const EdgeInsets.all(25),
                     child: const Icon(
@@ -56,11 +70,23 @@ class ProfilePage extends StatelessWidget {
                       size: 64,
                     ),
                   ),
+
+                  const SizedBox(height: 24),
+
                   //username
-                  Text(user!['username']),
+                  Text(
+                    user!['username'],
+                    style: const TextStyle(
+                        fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+
+                  const SizedBox(height: 8),
 
                   //email
-                  Text(user['email']),
+                  Text(
+                    user['email'],
+                    style: TextStyle(color: Colors.grey[600]),
+                  ),
                 ],
               ),
             );
