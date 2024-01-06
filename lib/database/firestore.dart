@@ -28,4 +28,12 @@ class FirestoreDatabase {
   }
 
   // read message from firebase
+  Stream<QuerySnapshot> getPostsStream() {
+    final postsStream = FirebaseFirestore.instance
+        .collection('posts')
+        .orderBy('Timestamp', descending: true)
+        .snapshots();
+
+    return postsStream;
+  }
 }
